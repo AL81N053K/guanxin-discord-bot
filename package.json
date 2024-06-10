@@ -1,0 +1,40 @@
+{
+    "name": "guanxin-discord-bot",
+    "main": "main.js",
+    "author": "AL81N053K",
+    "version": "2.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AL81N053K/guanxin-discord-bot.git"
+    },
+    "description": "Most of the code is from ZerioDev.",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "dependencies": {
+        "@discord-player/extractor": "^4.3.1",
+        "@discordjs/opus": "^0.9.0",
+        "@distube/ytdl-core": "^4.11.8",
+        "@evan/opus": "^1.0.3",
+        "@keyv/mongo": "^2.2.8",
+        "dbd-soft-ui": "^1.7.20-beta.1",
+        "discord-dashboard": "^2.3.62",
+        "discord-player": "6.6.9-dev.1",
+        "discord.js": "^14.13.0",
+        "ffmpeg-static": "^5.0.2",
+        "ms": "^3.0.0-canary.1",
+        "play-dl": "^1.9.6",
+        "translate": "^3.0.0"
+    },
+    "keywords": [
+        "bot",
+        "music",
+        "discord",
+        "discord-bot"
+    ],
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AL81N053K/guanxin-discord-bot/issues"
+    },
+    "homepage": "https://github.com/AL81N053K/guanxin-discord-bot#readme"
+}
