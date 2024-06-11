@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'nowplaying',
     description: 'See what song is currently playing!',
+    category: "Music",
     voiceChannel: true,
 
     async execute({ inter }) {

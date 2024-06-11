@@ -1,10 +1,12 @@
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const { QueryType, useMainPlayer } = require('discord-player');
 const { Translate } = require('../../process_tools');
+const MusicSettingsDB = require("../../schemas/MusicSettings.js");
 
 module.exports = {
     name: 'search',
     description: 'Search a song',
+    category: "Music",
     voiceChannel: true,
     options: [
         {
@@ -16,6 +18,9 @@ module.exports = {
     ],
 
     async execute({ client, inter }) {
+        let data = await MusicSettingsDB.findOne({ Guild: inter.guildId }).catch(
+            (err) => {}
+        );
         const player = useMainPlayer();
         const song = inter.options.getString('song');
 
@@ -30,10 +35,10 @@ module.exports = {
             metadata: {
              channel: inter.channel
                     },
-            spotifyBridge: client.config.opt.spotifyBridge,
-            volume: client.config.opt.defaultvolume,
-            leaveOnEnd: client.config.opt.leaveOnEnd,
-            leaveOnEmpty: client.config.opt.leaveOnEmpty
+            spotifyBridge: data.spotifyBridge,
+            volume: data.defaultvolume,
+            leaveOnEnd: data.leaveOnEnd,
+            leaveOnEmpty: data.leaveOnEmpty
         });
         const maxTracks = res.tracks.slice(0, 10);
 

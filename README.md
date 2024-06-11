@@ -138,7 +138,3 @@ To have full access to the project and to be able to withdraw the credits a smal
 | `tr` | Turkish | `uk` | Ukrainian | `ur` | Urdu |
 | `vi` | Vietnamese | `xh` | Xhosa | `yi` | Yiddish |
 | `zu` | Zulu | `id` | Indonesian | | |
-
-### 📝 ToDo 
-
--  [ ] Vote to skip command https://github.com/ZerioDev/Music-bot/issues/187

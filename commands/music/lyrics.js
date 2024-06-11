@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'lyrics',
     description:('Get the lyrics for the current track'),
+    category: "Music",
     voiceChannel: true,
 
     async execute({ inter }) {

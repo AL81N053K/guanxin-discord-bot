@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'queue',
     description:('Get the songs in the queue'),
+    category: "Music",
     voiceChannel: true,
 
     async execute({ client, inter }) {

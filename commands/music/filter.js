@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'filter',
     description:('Add a filter to your track'),
+    category: "Music",
     voiceChannel: true,
     options: [
         {

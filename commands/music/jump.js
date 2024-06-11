@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'jump',
     description:("Jumps to particular track in queue"),
+    category: "Music",
     voiceChannel: true,
     options: [
         {

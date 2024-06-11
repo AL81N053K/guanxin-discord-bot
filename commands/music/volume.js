@@ -6,6 +6,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'volume',
     description:('Adjust the volume'),
+    category: "Music",
     voiceChannel: true,
     options: [
         {

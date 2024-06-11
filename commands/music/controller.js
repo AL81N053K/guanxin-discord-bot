@@ -4,6 +4,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'controller',
     description:("Send music controller to a channel"),
+    category: "Music",
     voiceChannel: false,
     permissions: PermissionsBitField.Flags.ManageMessages,
     options: [

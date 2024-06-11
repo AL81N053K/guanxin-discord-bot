@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'loop',
     description:('Toggle the looping of song\'s or the whole queue'),
+    category: "Music",
     voiceChannel: true,
     options: [
         {

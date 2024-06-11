@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'shuffle',
     description:('Shuffle the queue'),
+    category: "Music",
     voiceChannel: true,
 
     async execute({ inter }) {

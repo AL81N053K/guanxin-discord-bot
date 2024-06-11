@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'playnext',
     description:("Play a song right after this one"),
+    category: "Music",
     voiceChannel: true,
     options: [
         {

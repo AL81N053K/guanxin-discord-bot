@@ -4,6 +4,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'help',
     description:("All the commands this bot has!"),
+    category: "Core",
     showHelp: false,
 
     async execute({ client, inter }) {

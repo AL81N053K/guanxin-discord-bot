@@ -6,6 +6,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'seek',
     description: 'Go back or foward in a song',
+    category: "Music",
     voiceChannel: true,
     options: [
         {

@@ -1,10 +1,12 @@
 const { QueryType, useMainPlayer } = require('discord-player');
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const { Translate } = require('../../process_tools');
+const MusicSettingsDB = require("../../schemas/MusicSettings.js");
 
 module.exports = {
     name: 'play',
     description:("Play a song!"),
+    category: "Music",
     voiceChannel: true,
     options: [
         {
@@ -16,6 +18,9 @@ module.exports = {
     ],
 
     async execute({ inter, client }) {
+        let data = await MusicSettingsDB.findOne({ Guild: inter.guildId }).catch(
+            (err) => {}
+        );
         const player = useMainPlayer();
 
         const song = inter.options.getString('song');
@@ -37,10 +42,10 @@ module.exports = {
                     metadata: {
                         channel: inter.channel
                     },
-                    volume: client.config.opt.volume,
-                    leaveOnEmpty: client.config.opt.leaveOnEmpty,
+                    volume: data.defaultvolume,
+                    leaveOnEmpty: data.leaveOnEmpty,
                     leaveOnEmptyCooldown: client.config.opt.leaveOnEmptyCooldown,
-                    leaveOnEnd: client.config.opt.leaveOnEnd,
+                    leaveOnEnd: data.leaveOnEnd,
                     leaveOnEndCooldown: client.config.opt.leaveOnEndCooldown,
                 }
             });

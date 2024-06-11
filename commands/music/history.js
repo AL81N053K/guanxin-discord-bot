@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'history',
     description:('See the history of the queue'),
+    category: "Music",
     voiceChannel: false,
 
     async execute({ inter }) {

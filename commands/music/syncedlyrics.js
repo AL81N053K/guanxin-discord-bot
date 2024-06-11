@@ -4,6 +4,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'syncedlyrics',
     description:('Syncronize the lyrics with the song'),
+    category: "Music",
     voiceChannel: true,
 
     async execute({ inter }) {

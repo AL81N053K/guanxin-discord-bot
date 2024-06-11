@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'skip',
     description:('Skip the track'),
+    category: "Music",
     voiceChannel: true,
 
     async execute({ inter }) {

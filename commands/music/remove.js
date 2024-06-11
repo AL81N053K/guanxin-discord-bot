@@ -5,6 +5,7 @@ const { Translate } = require('../../process_tools');
 module.exports = {
     name: 'remove',
     description: "remove a song from the queue",
+    category: "Music",
     voiceChannel: true,
     options: [
         {

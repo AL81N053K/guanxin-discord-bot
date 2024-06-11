@@ -1,15 +1,21 @@
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { Player } = require('discord-player');
-const { Client, GatewayIntentBits } = require('discord.js');
+const ms = require("ms")
+require('dotenv').config();
 
 global.client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildMessageReactions,
+		GatewayIntentBits.GuildPresences,
         GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.MessageContent
+        GatewayIntentBits.MessageContent,
+		GatewayIntentBits.DirectMessages,
     ],
-    disableMentions: 'everyone',
+    allowedMentions: { parse: ["everyone", "roles", "users"] },
+    rest: { timeout: ms("1m") }
 });
 
 client.config = require('./config');
@@ -19,7 +25,6 @@ player.extractors.loadDefault();
 
 console.clear()
 require('./loader');
-require("./dashboard");
 
 client.login(process.env.DISCORD_TOKEN)
 .catch(async (e) => {

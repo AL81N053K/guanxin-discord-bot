@@ -1,6 +1,6 @@
 module.exports = {
 	app: {
-		token: "xxx",
+		token: `${process.env.DISCORD_TOKEN}`,
 		playing: "by the Community ❤️",
 		global: true,
 		guild: "xxx",
@@ -42,6 +42,13 @@ module.exports = {
 		},
 	},
 
+	discord: {
+		token: `${process.env.DISCORD_TOKEN}`,
+		client: {
+			id: "754382634649518092",
+			secret: `${process.env.CLIENT_SECRET}`,
+		},
+	},
 	dbd: {
 		port: 80,
 		domain: "http://localhost",
