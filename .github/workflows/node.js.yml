@@ -32,6 +32,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: create env file
+      run: |
+        touch .env
+        echo DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} >> .env
+        echo CLIENT_SECRET=${{ secrets.CLIENT_SECRET }} >> .env
+        echo DASHBOARD_LICENCE=${{ secrets.DASHBOARD_LICENCE }} >> .env
+        echo MONGO_UNI=${{ secrets.MONGO_UNI }} >> .env
     - run: npm ci
     - run: npm run build --if-present
     - run: npm start
