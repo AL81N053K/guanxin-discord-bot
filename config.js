@@ -51,7 +51,7 @@ module.exports = {
 	},
 	dbd: {
 		port: 80,
-		domain: "http://localhost",
+		domain: "https://al81n053k.github.io/guanxin-discord-bot/",
 		redirectUri: "/discord/callback",
 		license: process.env.DASHBOARD_LICENCE,
 		ownerIDs: ["250264586425466881"],
