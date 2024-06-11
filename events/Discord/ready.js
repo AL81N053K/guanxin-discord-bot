@@ -1,7 +1,8 @@
 const { Translate } = require("../../process_tools");
-const ms = require("ms")
-const mongoose = require("mongoose")
-const mongodbURL = process.env.MONGO_URI
+const ms = require("ms");
+const mongoose = require("mongoose");
+const mongodbURL = process.env.MONGO_URI;
+const MusicSettingsDB = require("../../schemas/MusicSettings.js");
 
 module.exports = async (client) => {
 	console.log(
@@ -32,6 +33,27 @@ module.exports = async (client) => {
 			console.log("Connected to Database!");
 		})
 		.catch((err) => console.log(err));
+	client.guilds.cache.forEach(async (guild) => {
+		let data = await MusicSettingsDB.findOne({ Guild: guild.id }).catch(
+			(err) => {}
+		);
+		if (!data) {
+			MusicSettingsDB.create({
+				Guild: guild.id,
+				dj: {
+					enabled: false,
+					roleNames: [],
+					commands: [],
+				},
+				defaultvolume: 50,
+				maxVol: 100,
+				leaveOnEnd: true,
+				leaveOnEmpty: true,
+				loopMessage: false,
+				spotifyBridge: false
+			});
+		}
+	});
 
 	client.user.setActivity(client.config.app.playing);
 };

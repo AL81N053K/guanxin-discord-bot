@@ -1,7 +1,7 @@
 module.exports = {
 	app: {
 		token: `${process.env.DISCORD_TOKEN}`,
-		playing: "by the Community ❤️",
+		playing: "with love ❤️",
 		global: true,
 		guild: "xxx",
 		extraMessages: false,
